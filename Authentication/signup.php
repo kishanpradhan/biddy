@@ -15,7 +15,7 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
     $userCheck = mysqli_num_rows($query);
 
     if($userCheck > 0){
-        echo "Email already exits";
+        return "Email already exits";
         exit();
     }
 
@@ -30,6 +30,6 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
     session_start();
     $_SESSION['userid'] = $uid;
 
-    echo "success".$_SESSION['userid'];
+    return "success";
 
 }

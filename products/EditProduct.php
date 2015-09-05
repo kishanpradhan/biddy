@@ -18,7 +18,7 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
     $location = $_REQUEST['location'];
     $description = $_REQUEST['description'];
 
-    $sql = "UPDATE products SET title='$title',price='$price',location='$location',description='$description' WHERE id='$productId' ";
+    $sql = "UPDATE products SET title='$title',price='$price',location='$location',descriptions='$description' WHERE id='$productId' ";
 
     if(mysqli_query($db_conx, $sql)){
         echo "success";
