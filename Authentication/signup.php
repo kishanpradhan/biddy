@@ -23,8 +23,8 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
     $query = mysqli_query($db_conx, $sql);
     $uid = mysqli_insert_id($db_conx);
 
-    if (!file_exists("users/$email")) {
-        mkdir("users/$email", 0755);
+    if (!file_exists("../users/$uid")) {
+        mkdir("../users/$uid", 0755);
     }
 
     $_SESSION['userid'] = $uid;
