@@ -5,7 +5,9 @@
  * Date: 5/9/15
  * Time: 2:03 PM
  */
-if(isset($_REQUEST['product_id']) && isset($_REQUEST['user_id']) && isset($_REQUEST['bid_price'])) {                    #submit change
+include_once('../connection.php');
+if(isset($_REQUEST['product_id']) && isset($_REQUEST['user_id']) && isset($_REQUEST['bid_price'])) {
+    $id= $_SESSION['id'];      #submit change
     $product_id = @$_REQUEST["product_id"];                  #name change
     $user_id = @$_REQUEST["user_id"];
     $bid_price = @$_REQUEST["bid_price"];                        #name change
