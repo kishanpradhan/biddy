@@ -47,3 +47,15 @@ function uploadFile($file){
 
     return ['success',$url];
 }
+
+function uploadPhoto($file){
+    $imageData = base64_decode($file); // <-- **Change is here for variable name only**
+    $photo = imagecreatefromstring($imageData);
+
+    $fileName = date("DMjGisY")."".rand(1000,9999);
+    $uid = $_SESSION['userid'];
+
+    imagejpeg($photo,'../users/'.$uid.'/'.$fileName.'.jpg',100);
+
+    echo $uid;
+}

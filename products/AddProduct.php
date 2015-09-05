@@ -10,14 +10,15 @@ if(isset($_REQUEST['title']) && isset($_REQUEST['price']) && isset($_REQUEST['lo
     $location = $_REQUEST['location'];
     $description = $_REQUEST['description'];
     $currentBid = preg_replace('#[^0-9]#i','',$_REQUEST['price']);
-    $file = $_FILES["photo"];
+//    $file = $_FILES["photo"];
+    $file = uploadPhoto($file);
 
-    $result = uploadFile($file);
-    if($result[0] == "failed"){
-        echo $result[1];
-        exit();
-    }
-    $image_url = $result[1];
+//    $result = uploadFile($file);
+//    if($result[0] == "failed"){
+//        echo $result[1];
+//        exit();
+//    }
+//    $image_url = $result[1];
 
     $userId = $_SESSION['userid'];
 
