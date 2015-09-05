@@ -12,7 +12,6 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass'])){                    #s
        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$passwd'";               #name change
     $query = mysqli_query($db_conx,$sql) or die(mysqli_error($db_conx));  #table change
     $rs = mysqli_num_rows($query) or die(mysqli_error($db_conx));
-    echo $rs;
     if($rs==1){  #name change
      $_SESSION["email"] = $email;
      echo "success";
