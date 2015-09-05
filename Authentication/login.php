@@ -13,9 +13,11 @@ if($submit){
     $sql = mysqli_query($db_conx,"SELECT * FROM users"); #table change
 }
 while($rs = mysqli_fetch_array($sql)){
-    if($email == $rs["user"] && $passd == $rs["passwd"]){  #name change
-        echo " success";
+    if($rs["user"] == $email && $rs["passwd"] == $passwd ){  #name change
+     $_SESSION["user"] = $email;
+     header('location:');   #inser redirect page
     }
     else
         echo "failure";
+}
 }
