@@ -1,3 +1,0 @@
-<?php
-
-putenv(' HOST =localhost')
