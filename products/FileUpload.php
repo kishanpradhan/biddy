@@ -57,5 +57,5 @@ function uploadPhoto($file){
 
     imagejpeg($photo,'../users/'.$uid.'/'.$fileName.'.jpg',100);
 
-    echo $uid;
+    return 'users/'.$uid.'/'.$fileName.'.jpg';
 }

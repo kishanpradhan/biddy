@@ -11,7 +11,9 @@ if(isset($_REQUEST['title']) && isset($_REQUEST['price']) && isset($_REQUEST['lo
     $description = $_REQUEST['description'];
     $currentBid = preg_replace('#[^0-9]#i','',$_REQUEST['price']);
 //    $file = $_FILES["photo"];
-    $file = uploadPhoto($file);
+    $file = $_REQUEST['photo'];
+    $image_url = uploadPhoto($file);
+    echo $image_url;
 
 //    $result = uploadFile($file);
 //    if($result[0] == "failed"){
