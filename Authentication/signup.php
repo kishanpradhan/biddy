@@ -15,11 +15,11 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
     $userCheck = mysqli_num_rows($query);
 
     if($userCheck > 0){
-        echo "Email already exits";
+        return "Email already exits";
         exit();
     }
 
-    $sql = "INSERT INTO users (email, password) VALUES('$email','$pass')";
+    $sql = "INSERT INTO users (email, password) VALUES('$email','$pass') ";
     $query = mysqli_query($db_conx, $sql);
     $uid = mysqli_insert_id($db_conx);
 
@@ -27,8 +27,9 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
         mkdir("../users/$uid", 0755);
     }
 
+    session_start();
     $_SESSION['userid'] = $uid;
 
-    echo "success";
+    return "success";
 
 }
