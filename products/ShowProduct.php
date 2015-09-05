@@ -7,10 +7,10 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
     $userId = $_REQUEST['userId'];
     $productId = $_REQUEST['productId'];
 
-    if($userId != $_SESSION['userid']){
-        echo 'failed';
-        exit();
-    }
+//    if($userId != $_SESSION['userid']){
+//        echo 'failed';
+//        exit();
+//    }
 
     $sql = "SELECT * FROM products WHERE id='$productId' ";
     $query = mysqli_query($db_conx, $sql);
@@ -21,12 +21,16 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
         exit();
     }
 
-    $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+    $result = [];
 
-    print_r($row);
-//    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){
-//
-//    }
+    while($row = mysqli_fetch_assoc($query)) {
+
+        array_push($result,$row);
+    }
+    $result = json_encode($result);
+
+    header('Content-Type: application/json');
+    echo $result;
 
     exit();
 }
@@ -53,6 +57,10 @@ if(isset($_REQUEST['userId']))
 //        }
         array_push($result,$row);
     }
+    $result = json_encode($result);
+//    var_dump($result);
+    header('Content-Type: application/json');
+    echo $result;
 
-    print_r($result);
+    exit();
 }
