@@ -17,6 +17,8 @@ if(isset($_REQUEST['product_id']) && isset($_REQUEST['user_id']) && isset($_REQU
         if($bid_price > $rs['current_bid']) {
             $query2 = mysqli_query($db_conx, "UPDATE products SET current_bid='$bid_price' WHERE id='$product_id'");
         }
+
+        echo "success";
     }
     else{
         echo "bid price should be higher than base price";
