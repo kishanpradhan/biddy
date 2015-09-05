@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kishan
- * Date: 5/9/15
- * Time: 1:55 PM
- */
+
+$db_conx = mysqli_connect("localhost", "root", "kishan", "biddy");
+// Evaluate the connection
+if (mysqli_connect_errno()) {
+    echo mysqli_connect_error();
+    exit();
+}

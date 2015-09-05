@@ -1,3 +1,4 @@
 <?php
+include_once('.env.php');
 
-echo "hello";
+echo "hello ".getenv("aa");
