@@ -2,7 +2,7 @@
 session_start();
 
 include_once('../connection.php');
-//echo $_SESSION['userid'];
+
 if(isset($_REQUEST['title']) && isset($_REQUEST['price']) && isset($_REQUEST['location']))
 {
     $title = $_REQUEST['title'];
@@ -14,10 +14,10 @@ if(isset($_REQUEST['title']) && isset($_REQUEST['price']) && isset($_REQUEST['lo
     $userId = $_SESSION['userid'];
 
     $sql = "INSERT INTO products(user_id,title,descriptions,base_price,current_bid,location)
-            VALUES('$userId','$title','$description','$price','$currentBid','$location')";
-
+            VALUES('$userId','$title','$description','$price','$currentBid','$location') ";
+//    $query = mysqli_query($db_conx, $sql);
     if(mysqli_query($db_conx, $sql)){
-        echo "success".$userId;
+        echo "success";
     }
     else{
         echo "failed";
