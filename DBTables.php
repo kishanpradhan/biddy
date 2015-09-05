@@ -46,3 +46,11 @@ if (mysqli_query($db_conx, $sqlbid)) {
 } else {
     echo "Error creating table: " . mysqli_error($db_conx);
 }
+
+$sqladdColumn = "ALTER TABLE products ADD image_url VARCHAR(255) DEFAULT 'users/default.jpg'";
+
+if (mysqli_query($db_conx, $sqladdColumn)) {
+    echo "Table addcolumnavatar was created successfully</br>";
+} else {
+    echo "Error creating table: " . mysqli_error($db_conx);
+}

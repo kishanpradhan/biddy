@@ -13,13 +13,13 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
         exit();
     }
 
-    $sqlbid = "DELETE FROM bids WHERE producct_id='$productId' ";
+    $sqlbid = "DELETE FROM bids WHERE product_id='$productId' ";
 
     if(mysqli_query($db_conx, $sqlbid)){
-        echo "success";
+//        echo "success";
     }
     else{
-        echo "failed";
+        echo "failedd";
         exit();
     }
 

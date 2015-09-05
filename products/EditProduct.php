@@ -9,7 +9,7 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
     $productId = $_REQUEST['productId'];
 
     if($userId != $_SESSION['userid']){
-        echo 'failed';
+        echo 'faileddd';
         exit();
     }
 
@@ -18,8 +18,11 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
     $location = $_REQUEST['location'];
     $description = $_REQUEST['description'];
 
-    $sql = "UPDATE products SET title='$title',price='$price',location='$location',descriptions='$description' WHERE id='$productId' ";
+    echo $userId.' '.$productId.' '.$title.' '.$price.' '.$description.' '.$location.' ';
 
+    $sql = "UPDATE products SET title='$title',base_price=$price,location='$location',descriptions='$description' WHERE id=$productId ";
+    echo $sql;
+//    $query = mysqli_query($db_conx, $sql);
     if(mysqli_query($db_conx, $sql)){
         echo "success";
     }
