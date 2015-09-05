@@ -1,3 +1,3 @@
 <?php
 
-putenv("aa=123");
+putenv(' HOST =localhost')
