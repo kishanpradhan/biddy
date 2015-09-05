@@ -1,4 +1,4 @@
 <?php
-include_once('.env.php');
+include_once('connection.php');
 
-echo "hello ".getenv("aa");
+echo "hello ".getenv("DB_NAME");

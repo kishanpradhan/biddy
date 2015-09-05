@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kishan
- * Date: 5/9/15
- * Time: 1:54 PM
- */
+
+include_once('../connection.php');
+
+if(isset($_REQUEST['ptitle']) && isset($_REQUEST['price']) $$ isset($_REQUEST['location']))
+{
+    echo "success";
+}
