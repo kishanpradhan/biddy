@@ -6,8 +6,7 @@
  * Time: 1:53 PM
  */
 include_once('../connection.php');
-$submit = $_POST["submit"]; #name to be renamed
-if($submit){
+if(isset($_POST["submit"])){ #submit change
     $email   = @$_POST["email"]; #name change
     $passwd = @$_POST["pwd"];#name change
     $sql = mysqli_query($db_conx,"SELECT * FROM users"); #table change
