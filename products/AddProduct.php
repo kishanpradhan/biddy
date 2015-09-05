@@ -6,11 +6,11 @@ include_once('FileUpload.php');
 
 if(isset($_REQUEST['title']) && isset($_REQUEST['price']) && isset($_REQUEST['location']))
 {
-    $title = $_REQUEST['title'];
-    $price = $_REQUEST['price'];
+    $title = preg_replace('#[^a-z0-9]#i', '', $_REQUEST['title']);
+    $price = preg_replace('#[^0-9]#i', '',$_REQUEST['price']);
     $location = $_REQUEST['location'];
     $description = $_REQUEST['description'];
-    $currentBid = $_REQUEST['price'];
+    $currentBid = preg_replace('#[^0-9]#i','',$_REQUEST['price']);
     $file = $_FILES["photo"];
 
     $result = uploadFile($file);

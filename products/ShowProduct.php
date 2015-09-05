@@ -32,6 +32,3 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
 
     exit();
 }
-else{
-    echo "Input thik se de";
-}

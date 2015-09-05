@@ -29,7 +29,7 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
 
     session_start();
     $_SESSION['userid'] = $uid;
-
-    return "success";
+    $result = "{'uid':".$uid."}";
+    return json_decode($result);
 
 }
