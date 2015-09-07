@@ -7,10 +7,10 @@ if(isset($_REQUEST['userId']) && isset($_REQUEST['productId']))
     $userId = $_REQUEST['userId'];
     $productId = $_REQUEST['productId'];
 
-    if($userId != $_SESSION['userid']){
-        echo 'faileddd';
-        exit();
-    }
+//    if($userId != $_SESSION['userid']){
+//        echo 'faileddd';
+//        exit();
+//    }
 
     $title = $_REQUEST['title'];
     $price = $_REQUEST['price'];

@@ -11,7 +11,9 @@ if(isset($_REQUEST['userId']))
 //        exit();
 //    }
 
-    $sql = "SELECT * FROM bids WHERER user_id='$userId' ";
+    $sql = "SELECT p.id,p.user_id, p.title, p.descriptions, p.location, p.base_price, p.current_bid, p.image_url FROM bids b, products p WHERE b.product_id = p.id AND b.user_id = '$userId' ";
+//    echo $sql;
+//    $sql = "SELECT * FROM bids WHERE user_id='$userId' ";
     $query = mysqli_query($db_conx, $sql);
     $check = mysqli_num_rows($query);
 

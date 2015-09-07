@@ -7,5 +7,6 @@ if (mysqli_connect_errno()) {
     echo mysqli_connect_error();
     exit();
 }
-
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}

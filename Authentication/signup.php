@@ -15,7 +15,7 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
     $userCheck = mysqli_num_rows($query);
 
     if($userCheck > 0){
-        return "Email already exits";
+        echo "Email already exits";
         exit();
     }
 
@@ -27,7 +27,6 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['pass']))
         mkdir("../users/$uid", 0755);
     }
 
-    session_start();
     $_SESSION['userid'] = $uid;
 //    $result = "{'uid':".$uid."}";
 //    return json_decode($result);

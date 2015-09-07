@@ -65,7 +65,7 @@ if(isset($_REQUEST['userId']))
     exit();
 }
 
-if(isset($_REQUEST['location']))
+if(isset($_REQUEST['location']) && isset($_REQUEST['userid']))
 {
     if($_REQUEST['location'] === ""){
         echo "Enter a location for bidding";
@@ -73,8 +73,10 @@ if(isset($_REQUEST['location']))
     }
 
     $location = preg_replace('#[^a-z0-9]#i', '', $_REQUEST['location']);
+    $userId = $_REQUEST['userid'];
+//    echo $userId;
 
-    $sql = "SELECT * FROM products WHERE location LIKE '%$location%' order by id";
+    $sql = "SELECT * FROM products WHERE location LIKE '%$location%' AND status='stock' AND user_id!='$userId' order by id";
     $query = mysqli_query($db_conx, $sql);
 
     $result = [];
